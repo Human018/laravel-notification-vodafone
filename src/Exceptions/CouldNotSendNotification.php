@@ -1,11 +1,11 @@
 <?php
 
-namespace NotificationChannels\:channel_namespace\Exceptions;
+namespace NotificationChannels\Vodafone\Exceptions;
 
 class CouldNotSendNotification extends \Exception
 {
     public static function serviceRespondedWithAnError($response)
     {
-        return new static("Descriptive error message.");
+        return new static("Code: $response->code - $response->reason.");
     }
 }
